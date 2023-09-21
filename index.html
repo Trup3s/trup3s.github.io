@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Niklas Bittner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      crossorigin="anonymous"
+      type="text/css"
+    />
+    <script
+      type="text/javascript"
+      src="js/jquery.particleground.min.js"
+    ></script>
+    <script type="text/javascript">
+      document.addEventListener(
+        "DOMContentLoaded",
+        function () {
+          particleground(document.getElementById("particles"), {
+            dotColor: "#5cbdaa",
+            lineColor: "#5cbdaa",
+          });
+          var intro = document.getElementById("intro");
+          intro.style.marginTop = -intro.offsetHeight / 2 + "px";
+        },
+        false
+      );
+    </script>
+  </head>
+
+  <body>
+    <div id="particles">
+      <div id="intro">
+        <h1>Niklas Bittner</h1>
+        <p>
+          <span class="text_1">Software Developer</span>
+          <span class="text_2">IT Security Student</span>
+        </p>
+        <a href="https://github.com/Trup3s" class="social"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a href="https://app.hackthebox.com/profile/1474324" class="social"
+          ><img
+            style="width: 31px; height: 31px"
+            src="https://www.svgrepo.com/show/330606/hackthebox.svg"
+        /></a>
+      </div>
+    </div>
+  </body>
+</html>
