@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     <meta charset="UTF-8" />
@@ -25,10 +25,33 @@
             dotColor: "#5cbdaa",
             lineColor: "#5cbdaa",
           });
+
           var intro = document.getElementById("intro");
           intro.style.marginTop = -intro.offsetHeight / 2 + "px";
+
+          var scrollHint = document.getElementById("scrollHint");
+          var handleScrollHint = function () {
+            if (!scrollHint) {
+              return;
+            }
+
+            if (window.scrollY > 20) {
+              scrollHint.classList.add("is-hidden");
+            } else {
+              scrollHint.classList.remove("is-hidden");
+            }
+          };
+
+          handleScrollHint();
+          window.addEventListener("scroll", handleScrollHint, {
+            passive: true,
+          });
+          window.addEventListener("resize", function () {
+            intro.style.marginTop = -intro.offsetHeight / 2 + "px";
+            handleScrollHint();
+          });
         },
-        false
+        false,
       );
     </script>
   </head>
@@ -58,6 +81,171 @@
             src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/onlyfans.svg"
         /></a>
       </div>
+
+      <div id="scrollHint" class="scroll-hint" aria-hidden="true">
+        <span>Scroll Down!</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
     </div>
+
+    <section id="projects" aria-labelledby="projects-title">
+      <div class="projects-wrap">
+        <h2 id="projects-title">Projects</h2>
+
+        <article class="project-card">
+          <div class="project-media">
+            <img
+              class="project-image"
+              src="assets/images/airguard.png"
+              alt="AirGuard Logo"
+            />
+          </div>
+          <div class="project-body">
+            <h3>AirGuard</h3>
+            <p>
+              AirGuard helps users detect unknown tracking devices nearby,
+              bringing cross-platform protection against unwanted Bluetooth
+              tracking.
+            </p>
+            <ul class="project-tags" aria-label="Technologies used">
+              <li
+                class="tech-tag tech-android"
+                title="Android"
+                aria-label="Android"
+              >
+                <i class="fa-brands fa-android" aria-hidden="true"></i>
+                <span>Android</span>
+              </li>
+              <li
+                class="tech-tag tech-kotlin"
+                title="Kotlin"
+                aria-label="Kotlin"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/kotlin.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <span>Kotlin</span>
+              </li>
+              <li
+                class="tech-tag tech-ble"
+                title="Bluetooth LE"
+                aria-label="Bluetooth LE"
+              >
+                <i class="fa-brands fa-bluetooth-b" aria-hidden="true"></i>
+                <span>Bluetooth LE</span>
+              </li>
+              <li
+                class="tech-tag tech-privacy"
+                title="Privacy"
+                aria-label="Privacy"
+              >
+                <i class="fa-solid fa-user-shield" aria-hidden="true"></i>
+                <span>Privacy</span>
+              </li>
+            </ul>
+            <div class="project-actions">
+              <a
+                class="action-link action-website"
+                href="https://airguard.seemoo.de"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="AirGuard website"
+                title="Website"
+              >
+                <i class="fa-solid fa-globe" aria-hidden="true"></i>
+              </a>
+              <a
+                class="action-link action-fdroid"
+                href="https://f-droid.org/packages/de.seemoo.at_tracking_detection.release/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="AirGuard on F-Droid"
+                title="F-Droid"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/fdroid.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </a>
+              <a
+                class="action-link action-playstore"
+                href="https://play.google.com/store/apps/details?id=de.seemoo.at_tracking_detection.release"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="AirGuard on Google Play"
+                title="Google Play"
+              >
+                <i class="fa-brands fa-google-play" aria-hidden="true"></i>
+              </a>
+              <a
+                class="action-link action-github"
+                href="https://github.com/seemoo-lab/AirGuard"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="AirGuard GitHub"
+                title="GitHub"
+              >
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-media">
+            <img
+              class="project-image"
+              src="assets/images/resimulate.png"
+              alt="reSIMulate Logo"
+            />
+          </div>
+          <div class="project-body">
+            <h3>reSIMulate</h3>
+            <p>
+              reSIMulate is a security research project for analyzing and
+              simulating eSIM behavior to better understand provisioning flows
+              and attack surfaces.
+            </p>
+            <ul class="project-tags" aria-label="Technologies used">
+              <li
+                class="tech-tag tech-research"
+                title="Security Research"
+                aria-label="Security Research"
+              >
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <span>Security Research</span>
+              </li>
+              <li class="tech-tag tech-esim" title="eSIM" aria-label="eSIM">
+                <i class="fa-solid fa-sim-card" aria-hidden="true"></i>
+                <span>eSIM</span>
+              </li>
+              <li
+                class="tech-tag tech-python"
+                title="Python"
+                aria-label="Python"
+              >
+                <i class="fa-brands fa-python" aria-hidden="true"></i>
+                <span>Python</span>
+              </li>
+            </ul>
+            <div class="project-actions">
+              <a
+                class="action-link action-github"
+                href="https://github.com/Trup3s/resimulate"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="reSIMulate GitHub"
+                title="GitHub"
+              >
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
   </body>
 </html>
